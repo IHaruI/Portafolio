@@ -1,0 +1,57 @@
+<section class="mini-js">
+  <div class="mini-header">
+    <h2>Buscador de Tecnologías</h2>
+
+    <input
+      type="text"
+      placeholder="Buscar tecnología..."
+      class="buscador"
+      [(ngModel)]="textoBusqueda"
+      (input)="filtrarTecnologias()"
+    />
+
+    <div class="filtros">
+      <button
+        [class.activo]="categoriaSeleccionada === 'Todas'"
+        (click)="seleccionarCategoria('Todas')"
+      >
+        Todas
+      </button>
+
+      <button
+        [class.activo]="categoriaSeleccionada === 'Frontend'"
+        (click)="seleccionarCategoria('Frontend')"
+      >
+        Frontend
+      </button>
+
+      <button
+        [class.activo]="categoriaSeleccionada === 'Backend'"
+        (click)="seleccionarCategoria('Backend')"
+      >
+        Backend
+      </button>
+
+      <button
+        [class.activo]="categoriaSeleccionada === 'Herramientas'"
+        (click)="seleccionarCategoria('Herramientas')"
+      >
+        Herramientas
+      </button>
+    </div>
+  </div>
+
+  <div class="mini-body">
+    <div class="resultados">
+      <div class="card" *ngFor="let tech of tecnologiasFiltradas">
+        <h3>{{ tech.nombre }}</h3>
+        <span class="badge">{{ tech.categoria }}</span>
+        <p>{{ tech.descripcion }}</p>
+      </div>
+
+      <p *ngIf="tecnologiasFiltradas.length === 0" class="sin-resultados">
+        No se encontraron tecnologías.
+      </p>
+    </div>
+  </div>
+</section>

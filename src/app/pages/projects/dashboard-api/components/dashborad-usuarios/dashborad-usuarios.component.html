@@ -1,0 +1,11 @@
+<section class="usuarios">
+  <h3>Usuarios</h3>
+
+  <ul>
+    <li *ngFor="let u of usuarios">
+      <strong>{{ u.nombre }}</strong
+      ><br />
+      {{ u.email }} – {{ u.ciudad }}
+    </li>
+  </ul>
+</section>

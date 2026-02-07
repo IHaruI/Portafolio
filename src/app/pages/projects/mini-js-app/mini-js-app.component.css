@@ -1,0 +1,156 @@
+.mini-js {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.mini-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-superficie, #fff);
+  z-index: 10;
+  padding-bottom: 1rem;
+}
+
+.mini-header h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* ================= BUSCADOR ================= */
+
+.buscador {
+  width: 85%;
+  padding: 0.8rem 1rem;
+  margin: 0 auto 1rem auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+}
+
+/* ================= FILTROS) ================= */
+
+.filtros {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filtros button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background-color: #e5e7eb;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.filtros button.activo {
+  background-color: #6366f1;
+  color: white;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* ================= BODY (SCROLL) ================= */
+
+.mini-body {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 1rem;
+}
+
+/* ================= SCROLL BONITO MINI APP ================= */
+
+.mini-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mini-body::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+.mini-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ================= RESULTADOS ================= */
+
+.resultados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--color-superficie, #ffffff);
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background-color: #6366f1;
+  color: white;
+}
+
+.sin-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ========================= */
+/* 📱 Responsive */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .mini-js {
+    padding: 2rem 1rem;
+  }
+
+  .mini-js h2 {
+    font-size: 1.6rem;
+  }
+
+  .buscador {
+    width: 100%;
+  }
+
+  .filtros {
+    gap: 0.6rem;
+  }
+
+  .filtros button {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .resultados {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+}

@@ -1,0 +1,13 @@
+<section class="proyectos" [class.tema-oscuro]="temaOscuro">
+  <h2>Proyectos</h2>
+
+  <div class="projects-grid">
+    <app-todo-app-angular></app-todo-app-angular>
+    <app-dashboard-api></app-dashboard-api>
+    <app-landing-ui
+      [temaOscuro]="temaOscuro"
+      (cambiarTema)="alternarTema()"
+    ></app-landing-ui>
+    <app-mini-js-app></app-mini-js-app>
+  </div>
+</section>

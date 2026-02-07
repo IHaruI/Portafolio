@@ -1,0 +1,11 @@
+.todo-app {
+  padding: 2rem;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.contador {
+  margin-bottom: 1rem;
+  color: #6b7280;
+}

@@ -1,0 +1,60 @@
+/* Contenedor general */
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Barra de acciones (Usuarios / Publicaciones) */
+.acciones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Botones */
+.acciones button {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #e5e7eb;
+  color: #374151;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.acciones button:hover {
+  background-color: #d1d5db;
+}
+
+/* Botón activo */
+.acciones button.activo {
+  background-color: #6366f1;
+  color: #fff;
+}
+
+/* Estados */
+p {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+p:first-of-type {
+  color: #374151;
+}
+
+p:last-of-type {
+  color: #dc2626;
+}
+
+/* Evitar desbordes */
+app-dashborad-usuarios,
+app-dashborad-publicaciones {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}

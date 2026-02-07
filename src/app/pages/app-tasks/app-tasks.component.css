@@ -1,0 +1,479 @@
+/* =========================
+   VARIABLES (MISMO SISTEMA HOME)
+========================= */
+
+:root {
+  --primary: #6366f1;
+  --secondary: #22c55e;
+  --bg-light: #f8fafc;
+  --text-dark: #1f2933;
+  --text-muted: #6b7280;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.app-tasks {
+  margin: 0 2rem;
+  padding: 2rem 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.app-tasks h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.nav button {
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  background: white;
+  color: var(--primary);
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+
+.nav button:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   VISTAS / CARDS
+========================= */
+
+.vista {
+  max-width: 900px;
+  margin: auto;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.vista h3 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.8rem;
+  color: var(--text-dark);
+}
+
+/* =========================
+   MODO FOCUS (centrado general)
+========================= */
+
+.focus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+/* =========================
+   DASHBOARD STATS
+========================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat {
+  padding: 1.4rem;
+  border-radius: 14px;
+  background: var(--bg-light);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+}
+
+.stat span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.stat strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 0.4rem;
+  color: var(--primary);
+}
+
+/* =========================
+   SELECTOR TIEMPO MEJORADO
+========================= */
+
+.config-tiempo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.config-tiempo label {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.config-tiempo input {
+  width: 120px;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+  background: #f8fafc;
+}
+
+.config-tiempo input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* =========================
+   TAREA ACTIVA
+========================= */
+
+.focus-task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.focus-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: white;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  width: 260px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.3s ease;
+}
+
+.focus-card span {
+  font-weight: 500;
+}
+
+.focus-card button {
+  border: none;
+  background: #ef4444;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.focus-card button:hover {
+  background: #dc2626;
+}
+
+/* =========================
+   LISTA TAREAS FOCUS
+========================= */
+
+.focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.focus-list li {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-align: left;
+  font-weight: 500;
+}
+
+.focus-list li:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15);
+}
+
+/* =========================
+   TIMER CIRCULAR
+========================= */
+
+.timer-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2.5rem auto;
+  width: 220px;
+  height: 220px;
+}
+
+svg {
+  transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.bg {
+  stroke: #e5e7eb;
+}
+
+.progress {
+  stroke: var(--primary);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s linear;
+}
+
+.timer-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+/* =========================
+   CONTROLES
+========================= */
+
+.controles {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+  color: white;
+}
+
+.btn.start {
+  background: #4f46e5;
+}
+
+.btn.start:hover {
+  background: #4f46e5;
+}
+
+.btn.pause {
+  background: #f59e0b;
+}
+
+.btn.pause:hover {
+  background: #d97706;
+}
+
+.btn.reset {
+  background: #64748b;
+}
+
+.btn.reset:hover {
+  background: #475569;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================
+   ESTADO TEXTO
+========================= */
+
+.estado {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* =========================
+   CREAR TAREA
+========================= */
+
+.crear {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.crear input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.crear button {
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   LISTA GENERAL TAREAS
+========================= */
+
+.lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-light);
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.lista li.done {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.delete {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: black;
+  color: white;
+  padding: 1rem 1.4rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease;
+  z-index: 999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-tasks {
+    padding: 3rem 1.2rem;
+  }
+
+  .vista {
+    padding: 2rem 1.4rem;
+  }
+
+  .focus-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .focus-list {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .timer-container {
+    transform: scale(0.82);
+    transform-origin: center;
+  }
+
+  .timer-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .controles {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,129 @@
+.proyectos {
+  margin: 0 2rem 2rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.proyectos h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* ================= GRID PRINCIPAL ================= */
+
+.projects-grid {
+  display: grid;
+
+  /* Columna izquierda chica — derecha grande */
+  grid-template-columns: 1fr 0.5fr 1.5fr;
+
+  /* Altura controlada */
+  grid-template-rows: repeat(6, 170px);
+
+  gap: 2rem;
+}
+
+/* ================= BASE CARD ================= */
+
+.projects-grid > * {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.projects-grid > * {
+  box-sizing: border-box;
+}
+
+/* Hover */
+.projects-grid > *:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(99, 102, 241, 0.15);
+}
+
+/* ================= POSICIONES ================= */
+
+/* TODO APP — arriba izquierda */
+.projects-grid > app-todo-app-angular {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+/* MINI JS — abajo izquierda */
+.projects-grid > app-mini-js-app {
+  grid-column: 1 / 2;
+  grid-row: 3 / 7;
+}
+
+/* DASHBOARD — arriba derecha */
+.projects-grid > app-dashboard-api {
+  grid-column: 2 / 4;
+  grid-row: 1 / 4;
+}
+
+/* LANDING — abajo derecha */
+.projects-grid > app-landing-ui {
+  grid-column: 2 / 4;
+  grid-row: 4 / 7;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* ================= TEMA OSCURO LANDING ================= */
+
+.tema-oscuro .projects-grid > app-landing-ui {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* ================= SCROLL BONITO ================= */
+
+.projects-grid > *::-webkit-scrollbar {
+  width: 6px;
+}
+
+.projects-grid > *::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Reset total de posiciones del grid */
+  .projects-grid > * {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    width: 100%;
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid > * {
+    padding: 1.5rem;
+  }
+}
