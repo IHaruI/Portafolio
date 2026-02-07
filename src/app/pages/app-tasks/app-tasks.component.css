@@ -358,8 +358,6 @@ circle {
   border: none;
   padding: 0.6rem 1.4rem;
   border-radius: 999px;
-  background: var(--primary);
-  color: white;
   cursor: pointer;
 }
 
@@ -470,6 +468,10 @@ circle {
   }
 
   .controles {
+    flex-direction: column;
+  }
+
+  .crear {
     flex-direction: column;
   }
 
