@@ -58,3 +58,9 @@ app-dashborad-publicaciones {
   width: 100%;
   overflow-x: auto;
 }
+
+@media (max-width: 768px) {
+  .acciones {
+    flex-direction: column;
+  }
+}

@@ -2,7 +2,7 @@
    VARIABLES (MISMO SISTEMA HOME)
 ========================= */
 
-:root {
+:host {
   --primary: #6366f1;
   --secondary: #22c55e;
   --bg-light: #f8fafc;
@@ -262,7 +262,7 @@ circle {
 .progress {
   stroke: var(--primary);
   stroke-linecap: round;
-  transition: stroke-dashoffset 0.8s linear;
+  transition: stroke-dashoffset 1s linear;
 }
 
 .timer-text {

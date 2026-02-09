@@ -18,10 +18,8 @@
 .projects-grid {
   display: grid;
 
-  /* Columna izquierda chica — derecha grande */
   grid-template-columns: 1fr 0.5fr 1.5fr;
 
-  /* Altura controlada */
   grid-template-rows: repeat(6, 170px);
 
   gap: 2rem;
@@ -47,7 +45,6 @@
   box-sizing: border-box;
 }
 
-/* Hover */
 .projects-grid > *:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(99, 102, 241, 0.15);
@@ -106,6 +103,10 @@
 
 /* ================= RESPONSIVE ================= */
 
+/* ================= RESPONSIVE ================= */
+
+/* ================= RESPONSIVE CORREGIDO ================= */
+
 @media (max-width: 1000px) {
   .projects-grid {
     display: flex;
@@ -113,12 +114,26 @@
     gap: 2rem;
   }
 
-  /* Reset total de posiciones del grid */
   .projects-grid > * {
     grid-column: unset !important;
     grid-row: unset !important;
     width: 100%;
-    min-height: 450px;
+  }
+
+  .projects-grid > app-dashboard-api,
+  .projects-grid > app-landing-ui {
+    height: 550px;
+    overflow-y: auto;
+  }
+
+  .projects-grid > app-mini-js-app {
+    height: 550px;
+    overflow: hidden;
+  }
+
+  .projects-grid > app-todo-app-angular {
+    height: auto;
+    overflow: visible;
   }
 }
 

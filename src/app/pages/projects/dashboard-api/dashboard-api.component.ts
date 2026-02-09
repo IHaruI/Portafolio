@@ -40,7 +40,6 @@ export class DashboardApiComponent implements OnInit {
   }
 
   cargarPublicaciones(): void {
-    // Evitamos volver a pedir si ya están cargadas
     if (this.publicaciones.length > 0) {
       this.vistaActual = 'publicaciones';
       return;

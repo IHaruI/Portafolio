@@ -156,15 +156,14 @@ export class AppTasksComponent implements OnInit {
 
     if (this.focusTiempo <= 0) {
       this.focusTiempo = this.minutosSeleccionados * 60;
+      this.tiempoInicial = this.focusTiempo;
     }
 
-    this.tiempoInicial = this.focusTiempo;
     this.focusActivo = true;
 
     this.intervalId = setInterval(() => {
       if (this.focusTiempo > 0) {
         this.focusTiempo--;
-        this.guardarDatos();
       } else {
         this.finalizarFocus();
       }
@@ -204,7 +203,10 @@ export class AppTasksComponent implements OnInit {
   // ===== PROGRESO CIRCULAR =====
 
   get progresoOffset() {
+    if (!this.tiempoInicial || this.tiempoInicial <= 0) return 0;
+
     const progreso = this.focusTiempo / this.tiempoInicial;
+
     return this.circunferencia * (1 - progreso);
   }
 

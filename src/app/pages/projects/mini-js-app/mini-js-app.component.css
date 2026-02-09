@@ -31,7 +31,7 @@
   font-size: 1rem;
 }
 
-/* ================= FILTROS) ================= */
+/* ================= FILTROS ================= */
 
 .filtros {
   display: flex;
@@ -131,10 +131,6 @@
 
   .mini-js h2 {
     font-size: 1.6rem;
-  }
-
-  .buscador {
-    width: 100%;
   }
 
   .filtros {
