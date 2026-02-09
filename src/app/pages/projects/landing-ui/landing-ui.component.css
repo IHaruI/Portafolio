@@ -5,11 +5,11 @@
   --fondo: #ffffff;
   --texto: #111111;
   --texto-suave: #555555;
-  --primario: #4f46e5; /* azul principal para botones y llamado */
-  --secundario: #9ca3af; /* gris neutro */
-  --boton-hover: #4338ca; /* hover primario */
-  --boton-secundario-hover: #6b7280; /* hover secundario */
-  --sombra-hover: rgba(0, 0, 0, 0.15); /* sombra para tema claro */
+  --primario: #4f46e5;
+  --secundario: #9ca3af;
+  --boton-hover: #4338ca;
+  --boton-secundario-hover: #6b7280;
+  --sombra-hover: rgba(0, 0, 0, 0.15);
 
   background-color: var(--fondo);
   color: var(--texto);
@@ -21,11 +21,11 @@
   --fondo: #1f2937;
   --texto: #f3f4f6;
   --texto-suave: #d1d5db;
-  --primario: #4f46e5; /* azul uniforme también en oscuro */
+  --primario: #4f46e5;
   --secundario: #6b7280;
   --boton-hover: #818cf8;
   --boton-secundario-hover: #f3f4f6;
-  --sombra-hover: rgba(255, 255, 255, 0.15); /* sombra clara para oscuro */
+  --sombra-hover: rgba(255, 255, 255, 0.15);
 }
 
 /* =====================

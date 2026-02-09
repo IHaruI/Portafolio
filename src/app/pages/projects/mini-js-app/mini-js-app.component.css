@@ -4,7 +4,9 @@
   flex-direction: column;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 .mini-header {
   position: sticky;
@@ -19,7 +21,9 @@
   margin-bottom: 1rem;
 }
 
-/* ================= BUSCADOR ================= */
+/* =========================
+   BUSCADOR
+========================= */
 
 .buscador {
   width: 85%;
@@ -31,7 +35,9 @@
   font-size: 1rem;
 }
 
-/* ================= FILTROS ================= */
+/* =========================
+   FILTROS
+========================= */
 
 .filtros {
   display: flex;
@@ -57,7 +63,9 @@
   font-weight: 600;
 }
 
-/* ================= BODY (SCROLL) ================= */
+/* =========================
+   SCROLL (BODY)
+========================= */
 
 .mini-body {
   flex: 1;
@@ -65,7 +73,9 @@
   padding-top: 1rem;
 }
 
-/* ================= SCROLL BONITO MINI APP ================= */
+/* =========================
+   SCROLL BONITO
+========================= */
 
 .mini-body::-webkit-scrollbar {
   width: 6px;
@@ -80,7 +90,9 @@
   background: transparent;
 }
 
-/* ================= RESULTADOS ================= */
+/* =========================
+   RESULTADOS
+========================= */
 
 .resultados {
   display: grid;
@@ -121,7 +133,7 @@
 }
 
 /* ========================= */
-/* 📱 Responsive */
+/*  Responsive */
 /* ========================= */
 
 @media (max-width: 768px) {

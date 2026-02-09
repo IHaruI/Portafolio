@@ -24,7 +24,7 @@
 
 /* Botón */
 .todo-form button {
-  align-self: center; /* 👈 centrado */
+  align-self: center;
   padding: 0.6rem 1.8rem;
   border-radius: 8px;
   border: none;
