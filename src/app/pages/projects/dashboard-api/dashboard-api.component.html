@@ -1,0 +1,28 @@
+<div class="acciones">
+  <button
+    (click)="mostrarUsuarios()"
+    [class.activo]="vistaActual === 'usuarios'"
+  >
+    Usuarios
+  </button>
+
+  <button
+    (click)="cargarPublicaciones()"
+    [class.activo]="vistaActual === 'publicaciones'"
+  >
+    Publicaciones
+  </button>
+</div>
+
+<p *ngIf="cargando">Cargando...</p>
+<p *ngIf="error">Ocurrió un error</p>
+
+<app-dashborad-usuarios
+  *ngIf="vistaActual === 'usuarios' && !cargando && !error"
+  [usuarios]="usuarios"
+></app-dashborad-usuarios>
+
+<app-dashborad-publicaciones
+  *ngIf="vistaActual === 'publicaciones' && !cargando && !error"
+  [publicaciones]="publicaciones"
+></app-dashborad-publicaciones>

@@ -1,0 +1,39 @@
+.usuarios {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.usuarios h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Lista */
+.usuarios ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Item */
+.usuarios li {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+/* Último sin línea */
+.usuarios li:last-child {
+  border-bottom: none;
+}
+
+/* Nombre */
+.usuarios strong {
+  color: #4f46e5;
+  font-weight: 600;
+}

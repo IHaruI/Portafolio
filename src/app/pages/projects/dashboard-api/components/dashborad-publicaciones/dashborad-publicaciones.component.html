@@ -1,0 +1,9 @@
+<section class="publicaciones">
+  <h3>Publicaciones</h3>
+
+  <article class="publicacion" *ngFor="let p of publicaciones">
+    <h4>{{ p.titulo }}</h4>
+    <p>{{ p.contenido }}</p>
+    <small>Usuario ID: {{ p.userId }}</small>
+  </article>
+</section>

@@ -1,0 +1,11 @@
+<form (ngSubmit)="enviar()" #form="ngForm" class="todo-form">
+  <input
+    type="text"
+    name="titulo"
+    [(ngModel)]="titulo"
+    required
+    placeholder="Nueva tarea..."
+  />
+
+  <button type="submit" [disabled]="form.invalid">Agregar</button>
+</form>

@@ -1,0 +1,13 @@
+<ul class="todo-list">
+  <li *ngFor="let todo of todos" [class.completed]="todo.completado">
+    <input
+      type="checkbox"
+      [checked]="todo.completado"
+      (change)="alternar.emit(todo.id)"
+    />
+
+    <span>{{ todo.titulo }}</span>
+
+    <button (click)="eliminar.emit(todo.id)">✕</button>
+  </li>
+</ul>

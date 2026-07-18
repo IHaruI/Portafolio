@@ -1,0 +1,237 @@
+.navbar {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% - 50px);
+  max-width: 1300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 18px;
+
+  border-radius: 18px;
+
+  background: rgba(14, 14, 18, 0.72);
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(139, 92, 246, 0.18);
+
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.08);
+
+  z-index: 9999;
+}
+
+/* ---------- Clima ---------- */
+
+.navbar-clima {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.clima-icono {
+  font-size: 1.6rem;
+}
+
+.clima-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ciudad {
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.estado {
+  color: #b6b6b6;
+  font-size: 0.82rem;
+}
+
+/* ---------- Menú ---------- */
+
+.navbar-menu {
+  display: flex;
+  gap: 14px;
+}
+
+.navbar-menu button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  background: transparent;
+
+  color: #d6d6d6;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 0.95rem;
+
+  transition: 0.25s;
+
+  font-family: inherit;
+}
+
+.navbar-menu svg {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+}
+
+.navbar-menu button:hover {
+  background: rgba(139, 92, 246, 0.18);
+
+  color: white;
+}
+
+.navbar-menu button.active {
+  background: rgba(139, 92, 246, 0.22);
+
+  color: white;
+}
+
+/* ---------- Hora ---------- */
+
+.navbar-hora {
+  color: white;
+
+  font-weight: 700;
+
+  font-size: 1rem;
+
+  min-width: 95px;
+
+  text-align: right;
+}
+
+/* ========================= */
+/* TABLETS */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    width: calc(100% - 24px);
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .navbar-menu {
+    gap: 8px;
+  }
+
+  .navbar-menu button {
+    padding: 9px 14px;
+    font-size: 0.9rem;
+  }
+
+  .ciudad {
+    font-size: 0.85rem;
+  }
+
+  .estado {
+    font-size: 0.75rem;
+  }
+
+  .navbar-hora {
+    font-size: 0.9rem;
+    min-width: 75px;
+  }
+}
+
+/* ========================= */
+/* CELULARES */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
+    top: auto;
+
+    transform: none;
+
+    width: auto;
+    max-width: none;
+
+    padding: 10px;
+
+    border-radius: 18px;
+
+    background: rgba(14, 14, 18, 0.9);
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(139, 92, 246, 0.18);
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+
+    justify-content: center;
+  }
+
+  .navbar-clima,
+  .navbar-hora {
+    display: none;
+  }
+
+  .navbar-menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .navbar-menu button {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 10px 4px;
+
+    border-radius: 12px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    color: #cfcfcf;
+
+    background: transparent;
+
+    transition: all 0.25s ease;
+  }
+
+  .navbar-menu svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .navbar-menu button:hover {
+    background: rgba(139, 92, 246, 0.15);
+    color: white;
+  }
+
+  .navbar-menu button.active {
+    background: rgba(139, 92, 246, 0.25);
+    color: white;
+  }
+}

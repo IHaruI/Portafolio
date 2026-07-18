@@ -1,0 +1,166 @@
+<section class="app-tasks">
+  <h2>Modo Productivo</h2>
+
+  <!-- Toast -->
+  <div class="toast" *ngIf="mostrarMensaje">
+    {{ mensajeTexto }}
+  </div>
+
+  <!-- Navegación -->
+  <nav class="nav">
+    <button (click)="cambiarVista('dashboard')">Panel de control</button>
+    <button (click)="cambiarVista('focus')">Modo enfoque</button>
+    <button (click)="cambiarVista('tasks')">Tareas</button>
+  </nav>
+
+  @switch (vistaActual) {
+    @case ("dashboard") {
+      <div class="vista">
+        <h3>Resumen</h3>
+
+        <div class="stats">
+          <div class="stat">
+            <span>Pendientes</span>
+            <strong>{{ tareasPendientes }}</strong>
+          </div>
+
+          <div class="stat">
+            <span>Completadas</span>
+            <strong>{{ tareasCompletadas }}</strong>
+          </div>
+
+          <div class="stat">
+            <span>Total</span>
+            <strong>{{ tareas.length }}</strong>
+          </div>
+        </div>
+      </div>
+    }
+
+    @case ("focus") {
+      <div class="vista focus">
+        <h3>Modo de enfoque</h3>
+
+        <!-- Selector tiempo -->
+        <div class="config-tiempo">
+          <label>Minutos</label>
+
+          <input
+            type="number"
+            min="1"
+            max="60"
+            step="1"
+            [(ngModel)]="minutosSeleccionados"
+            (ngModelChange)="validarMinutos($event)"
+            (keydown)="bloquearTeclasInvalidas($event)"
+          />
+        </div>
+
+        <!-- Tarea activa -->
+        <div class="focus-task" *ngIf="tareaEnFocus; else elegirTarea">
+          <p>Tarea actual:</p>
+
+          <div class="focus-card">
+            <span>{{ tareaEnFocus.titulo }}</span>
+            <button (click)="quitarTareaFocus()">✕</button>
+          </div>
+        </div>
+
+        <!-- Selector tareas -->
+        <ng-template #elegirTarea>
+          <p>Elegí una tarea para enfocarte:</p>
+
+          <ul class="focus-list">
+            @for (task of tareas; track task.id) {
+              @if (!task.completada) {
+                <li (click)="seleccionarTareaFocus(task)">
+                  {{ task.titulo }}
+                </li>
+              }
+            }
+          </ul>
+        </ng-template>
+
+        <!-- ===== TIMER CIRCULAR ===== -->
+        <div class="timer-container">
+          <svg width="220" height="220">
+            <!-- fondo -->
+            <circle class="bg" cx="110" cy="110" [attr.r]="radio"></circle>
+
+            <!-- progreso -->
+            <circle
+              class="progress"
+              cx="110"
+              cy="110"
+              [attr.r]="radio"
+              [attr.stroke-dasharray]="circunferencia"
+              [attr.stroke-dashoffset]="progresoOffset"
+            ></circle>
+          </svg>
+
+          <!-- Texto tiempo -->
+          <div class="timer-text">
+            {{ focusFormateado }}
+          </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="controles">
+          <button
+            class="btn start"
+            (click)="iniciarFocus()"
+            [disabled]="focusActivo || !tareaEnFocus"
+          >
+            ▶ Iniciar
+          </button>
+
+          <button
+            class="btn pause"
+            (click)="detenerFocus()"
+            [disabled]="!focusActivo"
+          >
+            ⏸ Pausa
+          </button>
+
+          <button class="btn reset" (click)="resetFocus()">⟲ Reiniciar</button>
+        </div>
+
+        <p class="estado">
+          {{ focusActivo ? "En foco" : "En pausa" }}
+        </p>
+      </div>
+    }
+
+    @case ("tasks") {
+      <div class="vista">
+        <h3>Mis tareas</h3>
+
+        <div class="crear">
+          <input
+            [(ngModel)]="nuevaTarea"
+            placeholder="Nueva tarea..."
+            (keyup.enter)="agregarTarea()"
+          />
+          <button (click)="agregarTarea()">Agregar</button>
+        </div>
+
+        <ul class="lista">
+          @for (task of tareas; track task.id) {
+            <li [class.done]="task.completada">
+              <label>
+                <input
+                  type="checkbox"
+                  [checked]="task.completada"
+                  (change)="toggleTarea(task)"
+                />
+                {{ task.titulo }}
+              </label>
+
+              <button class="delete" (click)="eliminarTarea(task.id)">✕</button>
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  }
+</section>

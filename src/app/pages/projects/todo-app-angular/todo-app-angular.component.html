@@ -1,0 +1,12 @@
+<section class="todo-app">
+  <h3>Todo App</h3>
+  <p class="contador">Tareas pendientes: {{ conteoPendiente }}</p>
+
+  <app-todo-form (crearTodo)="agregarTodo($event)"></app-todo-form>
+
+  <app-todo-list
+    [todos]="todos"
+    (alternar)="alternarTodo($event)"
+    (eliminar)="eliminarTodo($event)"
+  ></app-todo-list>
+</section>

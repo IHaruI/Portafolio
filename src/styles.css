@@ -1,0 +1,65 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  color: white;
+
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  --x: 50%;
+  --y: 50%;
+  --grid-size: 42px;
+
+  background: black;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle 320px at var(--x) var(--y),
+      rgba(99, 102, 241, 0.22),
+      rgba(227, 54, 237, 0.12) 45%,
+      transparent 75%
+    ),
+    linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+
+  background-size:
+    auto,
+    var(--grid-size) var(--grid-size),
+    var(--grid-size) var(--grid-size);
+
+  animation: moverGrid 12s linear infinite;
+}
+
+@keyframes moverGrid {
+  from {
+    background-position:
+      center,
+      0 0,
+      0 0;
+  }
+
+  to {
+    background-position:
+      center,
+      42px 42px,
+      42px 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 90px;
+  }
+}
