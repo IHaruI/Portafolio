@@ -1,7 +1,6 @@
 :root {
   --primary: #8b5cf6;
   --secondary: #22c55e;
-
   --text-dark: #fff;
   --text-muted: rgba(255, 255, 255, 0.82);
   --border: rgba(255, 255, 255, 0.08);
@@ -16,9 +15,7 @@ html {
   cursor: pointer;
   left: 35px;
   top: 50%;
-
   transform: translateY(-50%);
-
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -28,17 +25,13 @@ html {
 
 .menu-lateral a {
   color: #8d8d8d;
-
   text-decoration: none;
-
   font-size: 1.3rem;
-
   transition: 0.25s;
 }
 
 .menu-lateral a:hover {
   color: white;
-
   transform: translateX(6px);
 }
 
@@ -46,25 +39,22 @@ section[id] {
   scroll-margin-top: 90px;
 }
 
-/* Layout general */
+/* LAYOUT GENERAL */
 
 .layout {
   max-width: 1000px;
   margin: auto;
-
   display: flex;
   align-items: flex-start;
   gap: 70px;
-
   padding: 100px 40px;
 }
 
-/* Imagen */
+/* IMAGEN */
 
 .perfil-imagen {
   width: 320px;
   flex-shrink: 0;
-
   position: sticky;
   top: 80px;
 }
@@ -72,17 +62,12 @@ section[id] {
 .foto-perfil {
   width: 220px;
   height: 220px;
-
   display: block;
   margin: auto;
-
   object-fit: cover;
   object-position: center 30%;
-
   border-radius: 50%;
-
   border: 2px solid rgba(255, 255, 255, 0.15);
-
   box-shadow:
     0 0 40px rgba(99, 102, 241, 0.3),
     0 0 80px rgba(227, 54, 237, 0.12);
@@ -90,7 +75,6 @@ section[id] {
 
 .perfil-info {
   margin-top: 35px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +85,6 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 10px;
 }
 
@@ -123,61 +106,44 @@ section[id] {
 
 .idiomas span {
   padding: 8px 16px;
-
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   color: white;
   font-size: 0.9rem;
-
   cursor: default;
 }
 
-/* Contenido */
+/* CONTENIDO */
 
 .contenido {
   flex: 1;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 35px;
 }
 
-/* Perfil */
+/* PERFIL */
 
 .perfil h1 {
   margin: 0;
-
   color: white;
-
   font-size: 4.5rem;
-
   font-weight: 800;
-
   letter-spacing: -2px;
 }
 
 .perfil h2 {
   margin: 0.8rem 0 1.5rem;
-
   color: #959595;
-
   font-size: 2.4rem;
-
   font-weight: 500;
 }
 
 .perfil p {
   max-width: 720px;
-
   font-size: 1.1rem;
-
   line-height: 1.4;
-
   color: var(--text-muted);
 }
 
@@ -192,19 +158,12 @@ section[id] {
   display: flex;
   align-items: center;
   gap: 10px;
-
   padding: 12px 18px;
-
   border-radius: 12px;
-
   text-decoration: none;
-
   color: white;
-
   background: rgba(255, 255, 255, 0.03);
-
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   transition: 0.25s;
 }
 
@@ -221,25 +180,19 @@ section[id] {
 
 .objetivo {
   margin-top: 22px;
-
   color: white;
 }
 
 .texto-principal {
   color: var(--text-muted);
-
   font-size: 1rem;
-
   line-height: 1.4;
 }
 
 .texto-secundario {
   margin-top: 22px;
-
   color: white;
-
   font-size: 1rem;
-
   line-height: 1.4;
 }
 
@@ -253,9 +206,7 @@ section[id] {
 
 .card h3 {
   margin: 0 0 24px;
-
   color: white;
-
   font-size: 2rem;
   font-weight: 700;
 }
@@ -290,19 +241,14 @@ section[id] {
 
 .estudio p {
   margin-top: 12px;
-
   color: var(--text-muted);
-
   font-size: 1rem;
 }
 
 .habilidad {
   display: flex;
-
   align-items: flex-start;
-
   gap: 22px;
-
   margin-bottom: 34px;
 }
 
@@ -312,31 +258,22 @@ section[id] {
 
 .habilidad h4 {
   color: var(--primary);
-
   font-size: 1.2rem;
-
   margin: 0 0 10px;
 }
 
 .habilidad p {
   color: var(--text-muted);
-
   font-size: 1.02rem;
-
   line-height: 1.8;
-
   margin: 0;
 }
 
 .habilidad img {
   width: 48px;
-
   height: 48px;
-
   object-fit: contain;
-
   flex-shrink: 0;
-
   margin-top: 4px;
 }
 
@@ -356,67 +293,47 @@ section[id] {
 
 .skills {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 14px;
 }
 
 .skill {
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
   padding: 10px 18px;
-
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   border-radius: 12px;
-
   background: rgba(255, 255, 255, 0.03);
-
   transition: 0.25s;
 }
 
 .skill:hover {
   transform: translateY(-4px);
-
   border-color: #8b5cf6;
-
   background: rgba(139, 92, 246, 0.12);
 }
 
 .skill img {
   width: 24px;
-
   height: 24px;
-
   object-fit: contain;
 }
 
 .skill span {
   color: white;
-
   font-size: 1rem;
-
   font-weight: 500;
 }
 
 .footer {
   max-width: 1000px;
-
   margin: 60px auto 40px;
-
   padding: 0 40px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-
   padding-top: 25px;
 }
 
@@ -450,9 +367,9 @@ section[id] {
   height: 24px;
 }
 
-/* ========================= */
-/* RESPONSIVE - TABLET */
-/* ========================= */
+/*=========================
+          TABLET
+=========================*/
 
 @media (max-width: 1100px) {
   /* Ocultar menú lateral */
@@ -465,17 +382,13 @@ section[id] {
     flex-direction: column;
     align-items: center;
     gap: 45px;
-
     padding: 50px 30px;
   }
 
-  /* Columna izquierda */
   .perfil-imagen {
     position: relative;
     top: 0;
-
     width: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -485,7 +398,6 @@ section[id] {
     align-items: center;
   }
 
-  /* Texto principal */
   .perfil {
     text-align: center;
   }
@@ -498,15 +410,14 @@ section[id] {
     justify-content: center;
   }
 
-  /* Footer */
   .footer {
     margin-top: 50px;
   }
 }
 
-/* ========================= */
-/* RESPONSIVE - CELULAR */
-/* ========================= */
+/*=========================
+          CELULAR
+=========================*/
 
 @media (max-width: 768px) {
   .layout {
@@ -514,14 +425,10 @@ section[id] {
     gap: 30px;
   }
 
-  /* Foto */
-
   .foto-perfil {
     width: 190px;
     height: 190px;
   }
-
-  /* Introducción */
 
   .perfil h1 {
     font-size: 2.7rem;
@@ -536,8 +443,6 @@ section[id] {
     font-size: 1.05rem;
   }
 
-  /* Cards */
-
   .card {
     padding: 24px;
   }
@@ -545,8 +450,6 @@ section[id] {
   .card h3 {
     font-size: 1.6rem;
   }
-
-  /* Estudios */
 
   .estudio-header {
     flex-direction: column;
@@ -562,8 +465,6 @@ section[id] {
     font-size: 0.9rem;
   }
 
-  /* Categorías */
-
   .categoria h4 {
     text-align: center;
     font-size: 1.15rem;
@@ -573,12 +474,9 @@ section[id] {
     justify-content: center;
   }
 
-  /* Footer */
-
   .footer {
     flex-direction: column;
     gap: 20px;
-
     text-align: center;
   }
 
@@ -587,23 +485,19 @@ section[id] {
   }
 }
 
-/* ========================= */
-/* RESPONSIVE - CELULARES PEQUEÑOS */
-/* ========================= */
+/*=========================
+        CELULARES
+=========================*/
 
 @media (max-width: 480px) {
   .layout {
     padding: 30px 15px;
   }
 
-  /* Foto */
-
   .foto-perfil {
     width: 170px;
     height: 170px;
   }
-
-  /* Títulos */
 
   .perfil h1 {
     font-size: 2.2rem;
@@ -612,8 +506,6 @@ section[id] {
   .perfil h2 {
     font-size: 1.3rem;
   }
-
-  /* Redes */
 
   .redes {
     flex-direction: column;
@@ -625,8 +517,6 @@ section[id] {
     width: 220px;
     justify-content: center;
   }
-
-  /* Skills */
 
   .skill {
     padding: 8px 14px;
@@ -641,8 +531,6 @@ section[id] {
     font-size: 0.9rem;
   }
 
-  /* Ubicación */
-
   .ubicacion span {
     font-size: 1rem;
   }
@@ -656,8 +544,6 @@ section[id] {
     font-size: 0.85rem;
     padding: 7px 14px;
   }
-
-  /* Footer */
 
   .footer {
     padding: 0 20px;

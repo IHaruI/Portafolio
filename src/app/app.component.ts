@@ -1,6 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, AfterViewInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { loadSlim } from '@tsparticles/slim';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,15 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   hora = '';
   ciudad = 'Buenos Aires';
   temperatura = '';
   estado = '';
   icono = '☀️';
+  private particlesCargadas = false;
+  private particlesInicializadas = false;
+  private particlesActuales: any;
 
   constructor(private http: HttpClient) {}
 
@@ -100,7 +104,110 @@ export class AppComponent implements OnInit {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
+    if (window.innerWidth <= 480) return;
+
     document.body.style.setProperty('--x', `${event.clientX}px`);
     document.body.style.setProperty('--y', `${event.clientY}px`);
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.controlarParticulas();
+  }
+
+  async ngAfterViewInit() {
+    this.controlarParticulas();
+  }
+
+  async controlarParticulas() {
+    if (window.innerWidth <= 480 && !this.particlesCargadas) {
+      const { tsParticles } = await import('@tsparticles/engine');
+
+      if (!this.particlesInicializadas) {
+        await loadSlim(tsParticles);
+        this.particlesInicializadas = true;
+      }
+
+      this.particlesActuales = await tsParticles.load({
+        id: 'particles-mobile',
+
+        options: {
+          background: {
+            color: {
+              value: 'transparent',
+            },
+          },
+
+          fpsLimit: 60,
+
+          particles: {
+            number: {
+              value: 28,
+            },
+
+            color: {
+              value: ['#8b5cf6', '#6366f1', '#d946ef'],
+            },
+
+            opacity: {
+              value: {
+                min: 0.25,
+                max: 0.55,
+              },
+            },
+
+            size: {
+              value: {
+                min: 2,
+                max: 7,
+              },
+            },
+
+            move: {
+              enable: true,
+              speed: 0.35,
+              random: true,
+              straight: false,
+
+              outModes: {
+                default: 'bounce',
+              },
+            },
+
+            links: {
+              enable: false,
+            },
+
+            twinkle: {
+              particles: {
+                enable: true,
+                frequency: 0.03,
+                opacity: 1,
+              },
+            },
+          },
+
+          interactivity: {
+            events: {
+              onHover: {
+                enable: false,
+              },
+
+              onClick: {
+                enable: false,
+              },
+            },
+          },
+        },
+      });
+
+      this.particlesCargadas = true;
+    }
+
+    if (window.innerWidth > 480 && this.particlesCargadas) {
+      this.particlesActuales?.destroy();
+      this.particlesActuales = null;
+      this.particlesCargadas = false;
+    }
   }
 }
